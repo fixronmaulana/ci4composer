@@ -19,16 +19,18 @@
                  </tr>
              </thead>
              <tbody>
+                <?php $no = 1; foreach($data_crud as $value) : ?>
                  <tr>
-                     <th scope="row">1</th>
-                     <td>Mark</td>
-                     <td>Otto</td>
+                     <th scope="row"><?= $no++ ?></th>
+                     <td><?= $value['no_pegawai'] ?></td>
+                     <td><?= $value['nama'] ?></td>
+                     <td><?= $value['departemen'] ?></td>
                      <td>
                          <button type="button" class="btn btn-info">Ubah</button>
                          <button type="button" class="btn btn-danger">Hapus</button>
                      </td>
                  </tr>
-
+                 <?php endforeach ?>
              </tbody>
          </table>
      </div>
