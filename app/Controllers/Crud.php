@@ -25,5 +25,26 @@ class Crud extends BaseController
 
         return view('crud/index', $data);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => _TITLE,
+            // 'data' => 'data'
+        ];
+
+        return view('crud/create', $data);
+    }
+
+    public function save()
+    {
+        $this->crud_model->save([
+            'no_pegawai' => $this->request->getVar('no_pegawai'),
+            'nama' => $this->request->getVar('nama'),
+            'departemen' => $this->request->getVar('departemen'),
+        ]);
+        session()->setFlashdata('success', 'Data berhasil ditambahkan');
+        return redirect()->to('/crud');
+    }
 }
 

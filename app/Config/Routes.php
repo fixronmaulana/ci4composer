@@ -7,3 +7,5 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/crud', 'Crud::index');
+$routes->get('/crud-create', 'Crud::create');
+$routes->post('/crud-create', 'Crud::save');
