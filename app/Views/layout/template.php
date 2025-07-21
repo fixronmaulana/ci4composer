@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>latihan CRUD</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>">
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
 
 </head>
 
@@ -39,7 +39,7 @@
         </footer>
     </div>
 
-    <script src="js/popper.min.js"></script>
+    <script src="<?= base_url('js/popper.min.js') ?>"></script>
 
 </body>
 

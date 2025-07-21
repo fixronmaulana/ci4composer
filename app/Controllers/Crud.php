@@ -46,5 +46,35 @@ class Crud extends BaseController
         session()->setFlashdata('success', 'Data berhasil ditambahkan');
         return redirect()->to('/crud');
     }
-}
 
+    public function edit($id)
+    {
+        $data_crud = $this->crud_model->where(['id_tbl_pegawai' => $id])->first();
+
+        $data = [
+            'title' => _TITLE,
+            'result' => $data_crud
+        ];
+        return view('crud/edit', $data);
+    }
+
+    public function update($id)
+    {
+        $this->crud_model->save([
+            'id_tbl_pegawai' => $id,
+            'no_pegawai' => $this->request->getVar('no_pegawai'),
+            'nama' => $this->request->getVar('nama'),
+            'departemen' => $this->request->getVar('departemen'),
+        ]);
+        session()->setFlashdata('success', 'Data berhasil dirubah');
+        return redirect()->to('/crud');
+    }
+
+    public function delete($id)
+    {
+        $this->crud_model->delete($id);
+
+        session()->setFlashdata('success', 'Data berhasil di hapus!');
+        return redirect()->to('/crud');
+    }
+}

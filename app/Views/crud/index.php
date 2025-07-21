@@ -16,6 +16,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">No Table</th>
                     <th scope="col">No Pegawai</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Departemen</th>
@@ -31,8 +32,13 @@
                         <td><?= $value['nama'] ?></td>
                         <td><?= $value['departemen'] ?></td>
                         <td>
-                            <button type="button" class="btn btn-info">Ubah</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>
+                            <a href="/crud-edit/<?= $value['id_tbl_pegawai'] ?>">
+                                <button type="button" class="btn btn-info">Ubah</button>
+                            </a>
+                            <a href="/crud-hapus/<?= $value['id_tbl_pegawai'] ?>">
+                                <button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Data Ini?')">Hapus</button>
+                            </a>
+
                         </td>
                     </tr>
                 <?php endforeach ?>
